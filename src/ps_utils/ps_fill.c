@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ps_fill.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/05 15:30:39 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/09 11:26:39 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../../includes/push_swap.h"
 
-#include "libft/libft.h"
-#include "libft/get_next_line/get_next_line.h"
-
-# ifndef MAX_STACK
-# define MAX_STACK 10240
-# endif
-
-typedef struct s_stack
+void	ft_fill_stack(t_stack *stack, char **argv)
 {
-	int	top;
-	int	array[MAX_STACK];
-}	t_stack;
-
-#endif
+	(void) stack;
+	ft_check_args(argv);
+}

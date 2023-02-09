@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/09 11:26:10 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/09 11:15:16 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/09 11:26:41 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int argc, char *argv[])
+void	ft_exit(char *message, int stauts)
 {
-	t_stack	a;
-
-	if (argc > 1)
-	{
-		ft_fill_stack(&a, argv);
-	}
-	return (0);
+	if (message)
+		ft_printf("%s", message);
+	exit(stauts);
 }

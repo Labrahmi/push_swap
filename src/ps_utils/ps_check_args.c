@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/09 11:44:13 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/09 22:03:36 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ void	ft_check_form(char *splited)
 	{
 		if (splited[i] == '+' || splited[i] == '-')
 		{
+			if (splited[i - 1])
+			{
+				if (splited[i - 1] != ' ')
+					ft_exit("Error\n", 1);
+			}
 			if (splited[i + 1])
 			{
 				if (!(ft_isdigit(splited[i + 1])))
@@ -41,6 +46,7 @@ void	ft_check_form(char *splited)
 			}
 			else
 				ft_exit("Error\n", 1);
+			
 		}
 		if (splited[i])
 			ft_check_strange(splited[i]);
@@ -54,6 +60,7 @@ void	ft_check_min(char *splited)
 	int	ret;
 
 	i = 0;
+	ret = 0;
 	while (splited[i])
 	{
 		if (splited[i] != ' ')
@@ -73,6 +80,8 @@ void	ft_check_args(char **argv)
 	i = 1;
 	while (argv[i])
 	{
+		if (ft_strlen(argv[i]) == 0)
+			ft_exit("Error\n", 1);
 		ft_check_form(argv[i]);
 		ft_check_min(argv[i]);
 		i++;

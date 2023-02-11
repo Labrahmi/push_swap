@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 12:39:48 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/05 16:10:59 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:44:14 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static long long	helper(const char *str, long long some, int i, int sign)
 	return (some);
 }
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;

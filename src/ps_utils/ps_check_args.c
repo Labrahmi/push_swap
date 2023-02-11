@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/09 22:03:36 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:44:04 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,30 @@ void	ft_check_min(char *splited)
 		while (splited[i] == ' ')
 			i++;
 	}
-	if (!(ret))
+	if (ret == 0)
 		ft_exit("Error\n", 1);
+}
+
+void	ft_check_int(char **argv)
+{
+	int		i;
+	int		j;
+	char	**splited;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		splited = ft_split(argv[i], ' ');
+		while (splited[j])
+		{
+			if (ft_strlen(splited[j]) > 10)
+				ft_exit("Error\n", 1);
+			ft_atoi();
+			j++;
+		}
+		i++;
+	}
 }
 
 void	ft_check_args(char **argv)
@@ -86,4 +108,5 @@ void	ft_check_args(char **argv)
 		ft_check_min(argv[i]);
 		i++;
 	}
+	ft_check_int(argv);
 }

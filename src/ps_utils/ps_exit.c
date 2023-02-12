@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:15:16 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/11 19:58:06 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/12 11:28:49 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	ft_exit(char *message, int stauts, void *array, char **d_array)
 	i = 0;
 	if (message)
 		ft_printf("%s", message);
-	// (void) array;
-	// (void) d_array;
 	if (array)
 		free(array);
 	if (d_array)
@@ -32,7 +30,6 @@ void	ft_exit(char *message, int stauts, void *array, char **d_array)
 		}
 		free(d_array);
 	}
-	while (1)
-		;
+	while (1);
 	exit(stauts);
 }

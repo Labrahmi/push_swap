@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/11 20:31:39 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/12 11:46:10 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,10 @@ int	ft_check_int(char **argv)
 				ft_exit("Error\n", 1, NULL, splited);
 			j++;
 			count++;
-			ft_free(NULL, splited);
 		}
+		ft_free(NULL, splited);
 		i++;
 	}
-	// ft_free(NULL, splited);
 	return (count);
 }
 
@@ -113,6 +112,7 @@ void	ft_check_rep(char **argv, int tot)
 			j++;
 		}
 		i++;
+		ft_free(NULL, splited);
 	}
 	i = 0;
 	j = 0;
@@ -144,6 +144,6 @@ void	ft_check_args(char **argv)
 		i++;
 	}
 	tot = ft_check_int(argv);
-	while (1);
 	ft_check_rep(argv, tot);
+	while (1);
 }

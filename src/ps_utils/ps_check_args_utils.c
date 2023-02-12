@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_exit.c                                          :+:      :+:    :+:   */
+/*   ps_check_args_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 11:15:16 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/11 19:58:06 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/11 19:18:10 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/11 20:17:20 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_exit(char *message, int stauts, void *array, char **d_array)
+void	ft_check_strange(char splited_char)
+{
+	int	ret;
+
+	ret = 1;
+	if (!(ft_isdigit(splited_char)))
+		ret = 0;
+	if (splited_char == '+' || splited_char == '-' || splited_char == ' ')
+		ret = 1;
+	if (!(ret))
+		ft_exit("Error\n", 1, NULL, NULL);
+}
+
+void	ft_free(void *array, char **d_array)
 {
 	int	i;
 
 	i = 0;
-	if (message)
-		ft_printf("%s", message);
-	// (void) array;
-	// (void) d_array;
 	if (array)
 		free(array);
 	if (d_array)
@@ -32,7 +41,4 @@ void	ft_exit(char *message, int stauts, void *array, char **d_array)
 		}
 		free(d_array);
 	}
-	while (1)
-		;
-	exit(stauts);
 }

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:25:15 by ylabrahm          #+#    #+#             */
-/*   Updated: 2022/10/21 10:12:23 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/11 20:10:35 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	**ft_allocater(char const *s, char c, char **strs)
 				j++;
 				i++;
 			}
-			strs[k] = ft_calloc(j + 1, sizeof(char));
+			strs[k] = (char *) ft_calloc(j + 1, sizeof(char));
 			if (!strs[k])
 				return (NULL);
 			k++;
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	count = ft_counter(s, c);
-	arrays = ft_calloc(count + 1, sizeof(char *));
+	arrays = (char **) ft_calloc(count + 1, sizeof(char *));
 	if (!arrays)
 		return (NULL);
 	if (!count)

@@ -6,7 +6,7 @@
 #    By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/02/11 19:19:13 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/02/13 15:23:06 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,5 +38,6 @@ clean:
 
 fclean:	clean
 	$(RM) $(NAME)
+	@make fclean -C includes/libft/
 
 re:	fclean all

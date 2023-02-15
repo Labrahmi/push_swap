@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_fill.c                                          :+:      :+:    :+:   */
+/*   operation_sa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/15 22:20:07 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/15 22:35:19 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/15 22:45:02 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_init_stack(t_stack *stack)
+void	ft_sa(t_stack *stack)
 {
-	stack->top = -1;
-}
+	int	swap;
 
-void	ft_fill_stack(t_stack *stack, char **argv)
-{
-	int		*array;
-	int		tot;
-	int		i;
-
-	i = 0;
-	array = ft_check_args(argv, &tot);
-	stack->top = -1;
-	while (tot >= 0)
+	if (stack->top > 1 && stack)
 	{
-		stack->top++;
-		stack->array[stack->top] = array[tot];
-		tot--;
+		swap = stack->array[stack->top];
+		stack->array[stack->top] = stack->array[stack->top - 1];
+		stack->array[stack->top - 1] = swap;
 	}
 }

@@ -6,7 +6,7 @@
 #    By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/02/13 15:23:06 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/02/15 22:40:35 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS = 	./push_swap.c \
 		./src/ps_utils/ps_check_args.c \
 		./src/ps_utils/ps_check_args_utils.c \
 		./src/ps_utils/ps_exit.c \
-		./src/ps_utils/ps_fill.c 
+		./src/ps_utils/ps_fill.c \
+		./src/operations/operation_sa.c
 
 OBJS = $(SRCS:.c=.o)
 

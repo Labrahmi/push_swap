@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/15 15:37:50 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/15 22:45:26 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	ft_exit(char *message, int stauts, void *array, char **d_array);
 
 /* ps_fill */
 void	ft_fill_stack(t_stack *stack, char **argv);
+
+/* operations */
+void	ft_sa(t_stack *stack);
 
 /* - - - - Function Prototypes - - - - - */
 

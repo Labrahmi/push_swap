@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:15:16 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/12 11:28:49 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:46:01 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ void	ft_exit(char *message, int stauts, void *array, char **d_array)
 		}
 		free(d_array);
 	}
-	while (1);
 	exit(stauts);
 }

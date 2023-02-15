@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/12 11:46:10 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/15 15:19:04 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,28 +68,26 @@ int	ft_check_int(char **argv)
 	int				j;
 
 	count = 0;
-	i = 1;
-	while (argv[i])
+	i = 0;
+	while (argv[++i])
 	{
-		j = 0;
+		j = -1;
 		splited = ft_split(argv[i], ' ');
-		while (splited[j])
+		while (splited[++j])
 		{
 			at = ft_atoi(splited[j]);
 			if (ft_strlen(splited[j]) > 11)
 				ft_exit("Error\n", 1, NULL, splited);
 			if (at < (-2147483648) || at > (2147483647))
 				ft_exit("Error\n", 1, NULL, splited);
-			j++;
 			count++;
 		}
 		ft_free(NULL, splited);
-		i++;
 	}
 	return (count);
 }
 
-void	ft_check_rep(char **argv, int tot)
+int	*ft_check_rep(char **argv, int tot)
 {
 	int		i;
 	int		j;
@@ -114,19 +112,8 @@ void	ft_check_rep(char **argv, int tot)
 		i++;
 		ft_free(NULL, splited);
 	}
-	i = 0;
-	j = 0;
-	while (array[i])
-	{
-		j = i;
-		while (array[j + 1])
-		{
-			if (array[i] == array[j + 1])
-				ft_exit("Error\n", 1, array, splited);
-			j++;
-		}
-		i++;
-	}
+	ft_check_rep_util(tot, array);
+	return (array);
 }
 
 void	ft_check_args(char **argv)
@@ -145,5 +132,4 @@ void	ft_check_args(char **argv)
 	}
 	tot = ft_check_int(argv);
 	ft_check_rep(argv, tot);
-	while (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:18:10 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/11 20:17:20 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/15 15:11:25 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,24 @@ void	ft_free(void *array, char **d_array)
 		}
 		free(d_array);
 	}
+}
+
+void	ft_check_rep_util(int tot, int *array)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < tot)
+	{
+		j = i;
+		while (j < (tot - 1))
+		{
+			if (array[i] == array[j + 1])
+				ft_exit("Error\n", 1, array, NULL);
+			j++;
+		}
+		i++;
+	}
+	free(array);
 }

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/15 15:11:52 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/15 15:37:50 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ typedef struct s_stack
 /* - - - - Function Prototypes - - - - - */
 
 /* ps_check_args */
-void	ft_check_args(char **argv);
 void	ft_check_strange(char splited_char);
-void	ft_free(void *array, char **d_array);
 void	ft_check_rep_util(int tot, int *array);
+int		*ft_check_args(char **argv, int *main_tot);
+void	ft_free(void *array, char **d_array);
 
 /* ps_exit */
 void	ft_exit(char *message, int stauts, void *array, char **d_array);

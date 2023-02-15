@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/15 15:19:04 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/15 15:38:17 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,9 @@ int	*ft_check_rep(char **argv, int tot)
 	return (array);
 }
 
-void	ft_check_args(char **argv)
+int	*ft_check_args(char **argv, int *main_tot)
 {
 	int	i;
-	int	tot;
 
 	i = 1;
 	while (argv[i])
@@ -130,6 +129,6 @@ void	ft_check_args(char **argv)
 		ft_check_min(argv[i]);
 		i++;
 	}
-	tot = ft_check_int(argv);
-	ft_check_rep(argv, tot);
+	*main_tot = ft_check_int(argv);
+	return (ft_check_rep(argv, *main_tot));
 }

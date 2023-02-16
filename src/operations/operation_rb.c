@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_ra.c                                     :+:      :+:    :+:   */
+/*   operation_rb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 15:46:11 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 18:38:52 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/16 18:38:32 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/16 18:39:01 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_ra(t_stack *stack)
+void	ft_rb(t_stack *stack)
 {
 	(void) stack;
 
@@ -29,6 +29,6 @@ void	ft_ra(t_stack *stack)
 			stack->array[i] = swap;
 			i--;
 		}
-		ft_printf("ra\n");
+		ft_printf("rb\n");
 	}
 }

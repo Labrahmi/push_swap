@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 18:12:44 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:37:58 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_visual_stacks(t_stack a, t_stack b, int total)
 		i--;
 	}
 	ft_printf("\n");
+	ft_printf("------------------\n");
 }
 
 int	main(int argc, char *argv[])
@@ -49,13 +50,7 @@ int	main(int argc, char *argv[])
 		ft_init_stack(&b);
 		ft_fill_stack(&a, argv);
 		total = a.top;
-		ft_pb(&a, &b);
-		ft_pb(&a, &b);
-		ft_pb(&a, &b);
-		ft_pa(&a, &b);
-		ft_pa(&a, &b);
-		ft_pa(&a, &b);
-		ft_sa(&a);
+		// ft_visual_stacks(a, b, total);
 	}
 	return (0);
 }

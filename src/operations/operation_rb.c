@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:38:32 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 18:39:01 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:52:20 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_rb(t_stack *stack)
 {
-	(void) stack;
-
 	int	i;
 	int	swap;
 

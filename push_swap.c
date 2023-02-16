@@ -6,18 +6,16 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 19:02:52 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/16 19:40:31 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	ft_visual_stacks(t_stack a, t_stack b, int total)
+void	ft_visual_stacks(t_stack a, t_stack b)
 {
 	int	i;
 
-	(void) b;
-	(void) total;
 	i = a.top;
 	ft_printf("------------------\n");
 	ft_printf("A: ");
@@ -42,19 +40,12 @@ int	main(int argc, char *argv[])
 {
 	t_stack	a;
 	t_stack	b;
-	int		total;
 
 	if (argc > 1)
 	{
 		ft_init_stack(&a);
 		ft_init_stack(&b);
 		ft_fill_stack(&a, argv);
-		total = a.top;
-		ft_visual_stacks(a, b, total);
-		ft_rra(&a);
-		ft_visual_stacks(a, b, total);
-		ft_ra(&a);
-		ft_visual_stacks(a, b, total);
 	}
 	return (0);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_sa.c                                     :+:      :+:    :+:   */
+/*   operation_sb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 22:35:19 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 12:54:49 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/16 12:57:52 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/16 12:58:03 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_sa(t_stack *stack)
+void	ft_sb(t_stack *stack)
 {
 	int	swap;
 
@@ -21,6 +21,6 @@ void	ft_sa(t_stack *stack)
 		swap = stack->array[stack->top];
 		stack->array[stack->top] = stack->array[stack->top - 1];
 		stack->array[stack->top - 1] = swap;
-		ft_printf("sa\n");
+		ft_printf("sb\n");
 	}
 }

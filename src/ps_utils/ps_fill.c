@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/15 22:20:07 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:11:00 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ void	ft_fill_stack(t_stack *stack, char **argv)
 
 	i = 0;
 	array = ft_check_args(argv, &tot);
-	stack->top = -1;
-	while (tot >= 0)
+	while (tot > 0)
 	{
 		stack->top++;
-		stack->array[stack->top] = array[tot];
+		stack->array[stack->top] = array[tot - 1];
 		tot--;
 	}
 }

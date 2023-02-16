@@ -1,0 +1,11 @@
+{
+	"workbench.colorCustomizations": {
+		"minimap.background": "#00000000",
+		"scrollbar.shadow": "#00000000"
+	},
+	"files.associations": {
+		"*.xpm": "c",
+		"push_swap.h": "c",
+		"get_next_line.h": "c"
+	}
+}

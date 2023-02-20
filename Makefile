@@ -6,15 +6,16 @@
 #    By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/02/16 18:48:59 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/02/20 15:53:48 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRCS = 	./push_swap.c \
-		./src/ps_utils/ps_check_args.c \
+		./src/ps_utils/ps_fill.c/ft_visual_stacks.c \
 		./src/ps_utils/ps_check_args_utils.c \
+		./src/ps_utils/ps_check_args.c \
 		./src/ps_utils/ps_exit.c \
 		./src/ps_utils/ps_fill.c \
 		./src/operations/operation_sa.c \

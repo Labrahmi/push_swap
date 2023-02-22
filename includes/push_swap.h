@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 19:05:59 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:53:26 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,15 @@
 
 typedef struct s_stack
 {
-	int	top;
-	int	array[MAX_STACK];
+	struct s_node	*top;
 }	t_stack;
+
+typedef struct s_node
+{
+	int				content;
+	long int		position;
+	struct s_node	*next;
+}	t_node;
 
 /* - - - - Function Prototypes - - - - - */
 
@@ -33,6 +39,7 @@ void	ft_check_strange(char splited_char);
 void	ft_check_rep_util(int tot, int *array);
 int		*ft_check_args(char **argv, int *main_tot);
 void	ft_free(void *array, char **d_array);
+void	ft_visual_stacks(t_stack a, t_stack b);
 
 /* ps_exit */
 void	ft_exit(char *message, int stauts, void *array, char **d_array);

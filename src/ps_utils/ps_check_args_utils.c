@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_check_args_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:18:10 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/18 19:27:00 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/24 08:27:20 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_check_rep_util(int tot, int *array)
 		while (j < (tot - 1))
 		{
 			if (array[i] == array[j + 1])
-				ft_exit("Error ffff\n", 1, array, NULL);
+				ft_exit("Error\n", 1, array, NULL);
 			j++;
 		}
 		i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_fill.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/22 18:09:07 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/24 08:26:04 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_bubble_sort(int *arr, int size)
 	}
 }
 
-t_node	*ft_push_node_to_stack(int number, int *sorted_array, t_stack *stack, int size)
+void	ft_push_node_to_stack(int number, t_stack *stack)
 {
 	t_node	*node;
 	int		i;
@@ -65,38 +65,27 @@ t_node	*ft_push_node_to_stack(int number, int *sorted_array, t_stack *stack, int
 	node->content = number;
 	node->next = NULL;
 	i = 0;
-	while (i < size)
-	{
-		if (number == sorted_array[i])
-			node->position = i;
-		i++;
-	}
-	return (node);
+	node->position = 0;
+	if (stack->top)
+		node->next = stack->top;
+	stack->top = node;
 }
 
 void ft_fill_stack(t_stack *stack, char **argv)
 {
-	int		*array;
-	int		*s_array;
-	int		tot;
-	int		i;
-	int		j;
-	t_node	*node;
+	int	*array;
+	int	tot;
+	int	i;
 
 	array = ft_check_args(argv, &tot);
-	s_array = ft_coppy(array, tot);
-	ft_bubble_sort(s_array, tot);
-	
-	printf("'%p'\n", array);
-	printf("'%p'\n", s_array);
-
-	return ;
-	// i = 0;
-	// while (i < tot)
-	// {
-	// 	node = ft_push_node_to_stack(array[i], s_array, stack, tot);
-	// 	printf("%d\n", node->content);
-	// 	sleep(1);
-	// 	i++;
-	// }
+	i = (tot - 1);
+	while (i >= 0)
+		ft_push_node_to_stack(array[i--], stack);
+	ft_bubble_sort(array, tot);
+	i = 0;
+	while (i < tot)
+	{
+		ft_printf("'%d'\n", array[i]);
+		i++;
+	}
 }

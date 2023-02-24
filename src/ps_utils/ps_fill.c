@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/24 08:26:04 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/24 08:38:19 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,23 @@ int	*ft_coppy(int *src, int size)
 	return dst;
 }
 
-void	ft_bubble_sort(int *arr, int size)
+void	ft_bubble_sort(int *array, int tot)
 {
 	int	i;
 	int	j;
 	int	temp;
 
 	i = 0;
-	while (i < (size - 1))
+	while (i < (tot - 1))
 	{
 		j = 0;
-		while (j < (size - i - 1))
+		while (j < (tot - i - 1))
 		{
-			if (arr[j] > arr[j + 1])
+			if (array[j] > array[j + 1])
 			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
 			}
 			j++;
 		}
@@ -71,6 +71,28 @@ void	ft_push_node_to_stack(int number, t_stack *stack)
 	stack->top = node;
 }
 
+void	ft_fill_position(t_stack *stack, int *array, int tot)
+{
+	t_node	*node;
+	int		i;
+
+	if (stack->top)
+	{
+		node = stack->top;
+		while (node)
+		{
+			i = 0;
+			while (i < tot)
+			{
+				if (array[i] == node->content)
+					node->position = i;
+				i++;
+			}
+			node = node->next;
+		}
+	}
+}
+
 void ft_fill_stack(t_stack *stack, char **argv)
 {
 	int	*array;
@@ -82,10 +104,15 @@ void ft_fill_stack(t_stack *stack, char **argv)
 	while (i >= 0)
 		ft_push_node_to_stack(array[i--], stack);
 	ft_bubble_sort(array, tot);
-	i = 0;
-	while (i < tot)
+	ft_fill_position(stack, array, tot);
+	
+	t_node	*node;
+	
+	node = stack->top;
+	while (node)
 	{
-		ft_printf("'%d'\n", array[i]);
-		i++;
+		ft_printf("(%d) -> '%d'\n", node->position, node->content);
+		usleep(500000);
+		node = node->next;
 	}
 }

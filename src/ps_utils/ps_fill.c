@@ -6,16 +6,11 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/24 08:38:19 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/24 08:43:24 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-void	ft_init_stack(t_stack *stack)
-{
-	stack->top = NULL;
-}
 
 int	*ft_coppy(int *src, int size)
 {
@@ -29,7 +24,7 @@ int	*ft_coppy(int *src, int size)
 		dst[i] = src[i];
 		i++;
 	}
-	return dst;
+	return (dst);
 }
 
 void	ft_bubble_sort(int *array, int tot)
@@ -93,7 +88,7 @@ void	ft_fill_position(t_stack *stack, int *array, int tot)
 	}
 }
 
-void ft_fill_stack(t_stack *stack, char **argv)
+void	ft_fill_stack(t_stack *stack, char **argv)
 {
 	int	*array;
 	int	tot;
@@ -105,14 +100,4 @@ void ft_fill_stack(t_stack *stack, char **argv)
 		ft_push_node_to_stack(array[i--], stack);
 	ft_bubble_sort(array, tot);
 	ft_fill_position(stack, array, tot);
-	
-	t_node	*node;
-	
-	node = stack->top;
-	while (node)
-	{
-		ft_printf("(%d) -> '%d'\n", node->position, node->content);
-		usleep(500000);
-		node = node->next;
-	}
 }

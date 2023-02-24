@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_visual_stacks.c                                 :+:      :+:    :+:   */
+/*   ps_fill_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 15:53:14 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/21 15:47:20 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/24 08:44:04 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/24 08:44:11 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_visual_stacks(t_stack a, t_stack b)
+void	ft_init_stack(t_stack *stack)
 {
-	(void) a;
-	(void) b;	
+	stack->top = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/24 09:55:17 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:03:32 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,23 +71,17 @@ void	ft_fill_position(t_stack *stack, int *array, int tot)
 	t_node	*node;
 	int		i;
 
-	if (stack->top)
+	node = stack->top;
+	while (node)
 	{
-		node = stack->top;
-		while (node)
+		i = 0;
+		while (i < tot)
 		{
-			i = 0;
-			while (i < tot)
-			{
-				if (array[i] == node->content)
-				{
-					node->position = i;
-					break;
-				}
-				i++;
-			}
-			node = node->next;
+			if (array[i] == node->content)
+				node->position = i;
+			i++;
 		}
+		node = node->next;
 	}
 }
 

@@ -6,7 +6,7 @@
 #    By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/02/24 10:27:54 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/02/25 17:24:06 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,9 @@ SRCS = 	./push_swap.c \
 		./src/ps_utils/ps_exit.c \
 		./src/ps_utils/ps_fill.c \
 		./src/ps_utils/ps_fill_utils.c \
-		# ./src/operations/operation_sa.c \
-		# ./src/operations/operation_sb.c \
+		./src/operations/operation_push.c \
+		./src/operations/operation_swap.c \
 		# ./src/operations/operation_ss.c \
-		# ./src/operations/operation_pa.c \
-		# ./src/operations/operation_pb.c \
 		# ./src/operations/operation_ra.c \
 		# ./src/operations/operation_rb.c \
 		# ./src/operations/operation_rr.c \
@@ -37,12 +35,13 @@ CC = cc
 RM = rm -f
 
 # CFLAGS = -Wall -Wextra -Werror 
+# CFLAGS = -fsanitize=address
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@make -C includes/libft/
-	$(CC) includes/libft/libft.a $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

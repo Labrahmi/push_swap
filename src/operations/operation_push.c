@@ -3,22 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   operation_pb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 13:16:39 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 15:21:20 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:17:42 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_pb(t_stack *stack_a, t_stack *stack_b)
+void	ft_push(t_stack *a, t_stack *b, char *message)
 {
-	if (stack_a->top > -1)
+	t_node	*b_old_top;
+
+	if (a->top)
 	{
-		stack_b->top++;
-		stack_b->array[stack_b->top] = stack_a->array[stack_a->top];
-		stack_a->top--;
-		ft_printf("pb\n");
+		if (b->top)
+		{
+			b_old_top = b->top;
+			b->top = a->top;
+			a->top = a->top->next;
+			b->top->next = b_old_top;
+		}
+		else
+		{
+			b->top = a->top;
+			a->top = a->top->next;
+			b->top->next = NULL;
+		}
+		ft_printf("%s\n", message);
 	}
 }

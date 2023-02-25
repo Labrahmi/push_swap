@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/24 09:47:04 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:12:28 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,28 +61,30 @@ void	ft_check_min(char *splited)
 
 int	ft_check_int(char **argv)
 {
-	char			**splited;
-	int				count;
-	long long int	at;
-	int				i;
-	int				j;
+	char	**s;
+	int		count;
+	int		i;
+	int		j;
+	int		x;
 
 	count = 0;
 	i = 0;
 	while (argv[++i])
 	{
 		j = -1;
-		splited = ft_split(argv[i], ' ');
-		while (splited[++j])
+		s = ft_split(argv[i], ' ');
+		while (s[++j])
 		{
-			at = ft_atoi(splited[j]);
-			if (ft_strlen(splited[j]) > 11)
-				ft_exit("Error\n", 1, NULL, splited);
-			if (at < (-2147483648) || at > (2147483647))
-				ft_exit("Error\n", 1, NULL, splited);
+			x = 0;
+			while (s[j][x])
+				x++;
+			if (ft_strlen(&s[j][x]) > 11)
+				ft_exit("Error\n", 1, NULL, s);
+			if (ft_atoi(s[j]) < MN || ft_atoi(s[j]) > MX)
+				ft_exit("Error\n", 1, NULL, s);
 			count++;
 		}
-		ft_free(NULL, splited);
+		ft_free(NULL, s);
 	}
 	return (count);
 }

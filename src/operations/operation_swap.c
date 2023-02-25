@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_pa.c                                     :+:      :+:    :+:   */
+/*   operation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 13:06:58 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/16 15:22:04 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/15 22:35:19 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/25 18:41:17 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_pa(t_stack *stack_a, t_stack *stack_b)
+void	ft_swap(t_stack *stack, char *message)
 {
-	if (stack_b->top > -1)
+	t_node	*old_top;
+
+	if (stack->top && stack->top->next)
 	{
-		stack_a->top++;
-		stack_a->array[stack_a->top] = stack_b->array[stack_b->top];
-		stack_b->top--;
-		ft_printf("pa\n");
+		old_top = stack->top;
+		stack->top = stack->top->next;
+		old_top->next = stack->top->next;
+		stack->top->next = old_top;
+		ft_printf("%s\n", message);
 	}
 }

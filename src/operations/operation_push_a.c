@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_pb.c                                     :+:      :+:    :+:   */
+/*   operation_push_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 13:16:39 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 17:17:42 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:26:47 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_push(t_stack *a, t_stack *b, char *message)
+void	ft_push_a(t_stack *b, t_stack *a, char *message)
 {
 	t_node	*b_old_top;
 

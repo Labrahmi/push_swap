@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_swap.c                                   :+:      :+:    :+:   */
+/*   operation_rotate.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 22:35:19 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 19:15:00 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/25 19:40:59 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/25 19:54:38 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_swap(t_stack *stack, char *message)
+void	ft_rotate(t_stack *stack, char *message)
 {
-	t_node	*old_top;
+    t_node  *old_top;
+    t_node  *temp;
 
-	if (stack->top && stack->top->next)
-	{
-		old_top = stack->top;
-		stack->top = stack->top->next;
-		old_top->next = stack->top->next;
-		stack->top->next = old_top;
-		if (message)
-			ft_printf("%s\n", message);
-	}
+    if (stack->top && stack->top->next)
+    {
+        old_top = stack->top;
+        stack->top = stack->top->next;
+        temp = stack->top;
+        while (temp->next)
+            temp = temp->next;
+        temp->next = old_top;
+        old_top->next = NULL;
+        if (message)
+            ft_printf("%s\n", message);
+    }
 }

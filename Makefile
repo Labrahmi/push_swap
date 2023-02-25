@@ -6,7 +6,7 @@
 #    By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/02/25 17:24:06 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/02/25 20:24:54 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,11 @@ SRCS = 	./push_swap.c \
 		./src/ps_utils/ps_exit.c \
 		./src/ps_utils/ps_fill.c \
 		./src/ps_utils/ps_fill_utils.c \
-		./src/operations/operation_push.c \
+		./src/operations/operation_push_a.c \
+		./src/operations/operation_push_b.c \
 		./src/operations/operation_swap.c \
-		# ./src/operations/operation_ss.c \
-		# ./src/operations/operation_ra.c \
-		# ./src/operations/operation_rb.c \
-		# ./src/operations/operation_rr.c \
-		# ./src/operations/operation_rra.c \
-		# ./src/operations/operation_rrb.c \
-		# ./src/operations/operation_rrr.c 
+		./src/operations/operation_swap_ss.c \
+		./src/operations/operation_rotate.c \
 
 OBJS = $(SRCS:.c=.o)
 

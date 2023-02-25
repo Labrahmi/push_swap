@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_swap.c                                   :+:      :+:    :+:   */
+/*   operation_push_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 22:35:19 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 19:15:00 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/16 13:16:39 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/25 20:24:32 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_swap(t_stack *stack, char *message)
+void	ft_push_b(t_stack *a, t_stack *b, char *message)
 {
-	t_node	*old_top;
+	t_node	*b_old_top;
 
-	if (stack->top && stack->top->next)
+	if (a->top)
 	{
-		old_top = stack->top;
-		stack->top = stack->top->next;
-		old_top->next = stack->top->next;
-		stack->top->next = old_top;
-		if (message)
-			ft_printf("%s\n", message);
+		if (b->top)
+		{
+			b_old_top = b->top;
+			b->top = a->top;
+			a->top = a->top->next;
+			b->top->next = b_old_top;
+		}
+		else
+		{
+			b->top = a->top;
+			a->top = a->top->next;
+			b->top->next = NULL;
+		}
+		ft_printf("%s\n", message);
 	}
 }

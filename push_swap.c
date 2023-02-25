@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 18:43:23 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/25 22:01:35 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_visual_stacks(t_stack *a, t_stack *b)
 	if (node)
 		while (node)
 		{
-			ft_printf("%d[%d] ", node->content, node->position);
+			ft_printf("%d ", node->content);
 			node = node->next;
 		}
 	else
@@ -33,7 +33,7 @@ void	ft_visual_stacks(t_stack *a, t_stack *b)
 	if (node)
 		while (node)
 		{
-			ft_printf("%d[%d] ", node->content, node->position);
+			ft_printf("%d ", node->content);
 			node = node->next;
 		}
 	else
@@ -53,9 +53,6 @@ int	main(int argc, char *argv[])
 		ft_init_stack(stack_a);
 		ft_init_stack(stack_b);
 		ft_fill_stack(stack_a, argv);
-		
-		ft_visual_stacks(stack_a, stack_b);
-		ft_swap(stack_a, "sa");
 		ft_visual_stacks(stack_a, stack_b);
 	}
 	return (0);

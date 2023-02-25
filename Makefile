@@ -6,7 +6,7 @@
 #    By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/02/25 20:24:54 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/02/25 22:34:10 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ SRCS = 	./push_swap.c \
 		./src/operations/operation_swap.c \
 		./src/operations/operation_swap_ss.c \
 		./src/operations/operation_rotate.c \
+		./src/operations/operation_rotate_rr.c \
+		./src/operations/operation_rotate_rev.c \
+		./src/operations/operation_rotate_rev_rrr.c \
 
 OBJS = $(SRCS:.c=.o)
 

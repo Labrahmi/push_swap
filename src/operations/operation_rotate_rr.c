@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_rotate.c                                 :+:      :+:    :+:   */
+/*   operation_rotate_rr.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 19:40:59 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 22:24:39 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/25 22:06:29 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/25 22:21:30 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_rotate(t_stack *stack, char *message)
+void	ft_rotate_rr(t_stack *stack_a, t_stack *stack_b, char *message)
 {
-	t_node	*old_top;
-	t_node	*temp;
-
-	if (stack->top && stack->top->next)
-	{
-		old_top = stack->top;
-		stack->top = stack->top->next;
-		temp = stack->top;
-		while (temp->next)
-			temp = temp->next;
-		temp->next = old_top;
-		old_top->next = NULL;
-		if (message)
-			ft_printf("%s\n", message);
-	}
+	ft_rotate(stack_a, NULL);
+	ft_rotate(stack_a, NULL);
+	ft_printf("%s\n", message);
 }

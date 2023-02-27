@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/27 12:39:01 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/27 15:47:20 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,12 +106,12 @@ int main(int argc, char *argv[])
 		ft_init_stack(stack_a);
 		ft_init_stack(stack_b);
 		ft_fill_stack(stack_a, argv);
-
 		{
+			int chunk_count;
 			int size_of_a;
 			int size_of_b;
 			int chunk;
-			int chunk_count;
+			int pos;
 			int i;
 
 			size_of_a = ft_stack_size(*stack_a);
@@ -131,7 +131,6 @@ int main(int argc, char *argv[])
 					ft_rotate(stack_b, "rb");
 				i++;
 			}
-			int pos;
 			size_of_b = ft_stack_size(*stack_b);
 			while (stack_b->top)
 			{

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 22:33:53 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/26 08:14:41 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_swap_ss(t_stack *stack_a, t_stack *stack_b, char *message);
 
 // *
 void	ft_push_b(t_stack *a, t_stack *b, char *message);
-void	ft_push_a(t_stack *a, t_stack *b, char *message);
+void	ft_push_a(t_stack *b, t_stack *a, char *message);
 
 // *
 void	ft_rotate(t_stack *stack, char *message);

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/26 16:48:55 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:39:01 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,26 @@ int ft_get_real_position(t_stack *stack_b, int curr)
 	return (0);
 }
 
+int	ft_set_size(int	size_of_stack)
+{
+	int	d;
+
+	d = 1;
+	if (size_of_stack >= 10)
+		d = 2;
+	if (size_of_stack >= 60)
+		d = 3;
+	if (size_of_stack >= 80)
+		d = 4;
+	if (size_of_stack >= 100)
+		d = 5;
+	if (size_of_stack >= 200)
+		d = 6;
+	if (size_of_stack >= 500)
+		d = 8;
+	return (size_of_stack / d);
+}
+
 int main(int argc, char *argv[])
 {
 	t_stack *stack_a;
@@ -95,7 +115,7 @@ int main(int argc, char *argv[])
 			int i;
 
 			size_of_a = ft_stack_size(*stack_a);
-			chunk = (size_of_a / 5);
+			chunk = ft_set_size(size_of_a);
 			chunk_count = chunk;
 			i = 0;
 			while (stack_a->top)

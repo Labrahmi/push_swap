@@ -8,6 +8,7 @@
 		"push_swap.h": "c",
 		"get_next_line.h": "c",
 		"libft.h": "c",
-		"random": "c"
+		"random": "c",
+		"chrono": "c"
 	}
 }

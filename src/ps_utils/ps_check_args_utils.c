@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:18:10 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/24 10:26:57 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:39:15 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,4 @@ void	ft_check_rep_util(int tot, int *array)
 		}
 		i++;
 	}
-	// free(array);
 }

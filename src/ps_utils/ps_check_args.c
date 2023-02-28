@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/24 11:12:28 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:38:01 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,34 +59,39 @@ void	ft_check_min(char *splited)
 		ft_exit("Error\n", 1, NULL, NULL);
 }
 
-int	ft_check_int(char **argv)
+typedef struct s_ps_check_args
 {
 	char	**s;
 	int		count;
 	int		i;
 	int		j;
 	int		x;
+}	t_ps_check_args;
 
-	count = 0;
-	i = 0;
-	while (argv[++i])
+int	ft_check_int(char **argv)
+{
+	t_ps_check_args	t;
+
+	t.count = 0;
+	t.i = 0;
+	while (argv[++(t.i)])
 	{
-		j = -1;
-		s = ft_split(argv[i], ' ');
-		while (s[++j])
+		t.j = -1;
+		t.s = ft_split(argv[t.i], ' ');
+		while (t.s[++(t.j)])
 		{
-			x = 0;
-			while (s[j][x])
-				x++;
-			if (ft_strlen(&s[j][x]) > 11)
-				ft_exit("Error\n", 1, NULL, s);
-			if (ft_atoi(s[j]) < MN || ft_atoi(s[j]) > MX)
-				ft_exit("Error\n", 1, NULL, s);
-			count++;
+			t.x = 0;
+			while (t.s[t.j][t.x])
+				(t.x)++;
+			if (ft_strlen(&t.s[t.j][t.x]) > 11)
+				ft_exit("Error\n", 1, NULL, t.s);
+			if (ft_atoi(t.s[t.j]) < MN || ft_atoi(t.s[t.j]) > MX)
+				ft_exit("Error\n", 1, NULL, t.s);
+			(t.count)++;
 		}
-		ft_free(NULL, s);
+		ft_free(NULL, t.s);
 	}
-	return (count);
+	return (t.count);
 }
 
 int	*ft_check_rep(char **argv, int tot)

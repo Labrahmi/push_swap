@@ -6,26 +6,11 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/27 16:15:56 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:40:35 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-int	*ft_coppy(int *src, int size)
-{
-	int	i;
-	int	*dst;
-
-	dst = (int *) malloc(size * sizeof(int));
-	i = 0;
-	while (i < size)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
-}
 
 void	ft_bubble_sort(int *array, int tot)
 {
@@ -93,7 +78,6 @@ void	ft_fill_rank(t_stack *stack, int tot)
 
 	i = 0;
 	j = tot - 1;
-
 	node = stack->top;
 	while (node)
 	{

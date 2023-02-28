@@ -7,6 +7,7 @@
 		"*.xpm": "c",
 		"push_swap.h": "c",
 		"get_next_line.h": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"random": "c"
 	}
 }

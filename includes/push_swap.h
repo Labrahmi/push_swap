@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/28 17:19:35 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:27:41 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 #  define MAX_STACK 10240
 # endif
 
-#  define MX 2147483647
-#  define MN (-MX-1)
+# define MX 2147483647
+# define MN -2147483648
 
 typedef struct s_stack
 {
@@ -37,48 +37,25 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
-/* - - - - Function Prototypes - - - - - */
-
-/* ps_check_args */
 void	ft_check_strange(char splited_char);
 void	ft_check_rep_util(int tot, int *array);
 int		*ft_check_args(char **argv, int *main_tot);
 void	ft_free(void *array, char **d_array);
-
-/* ps_exit */
 void	ft_exit(char *message, int stauts, void *array, char **d_array);
-
-/* ps_fill */
 void	ft_fill_stack(t_stack *stack, char **argv);
 void	ft_init_stack(t_stack *stack);
-
-/* operations */
 void	ft_swap(t_stack *stack, char *message);
 void	ft_swap_ss(t_stack *stack_a, t_stack *stack_b, char *message);
-
-// *
 void	ft_push_b(t_stack *a, t_stack *b, char *message);
 void	ft_push_a(t_stack *b, t_stack *a, char *message);
-
-// *
 void	ft_rotate(t_stack *stack, char *message);
 void	ft_rotate_rr(t_stack *stack_a, t_stack *stack_b, char *message);
-
-// *
 void	ft_rotate_rev(t_stack *stack, char *message);
 void	ft_rotate_rev_rrr(t_stack *stack_a, t_stack *stack_b, char *message);
-
-
-/* Algo */
 void	ft_push_all_to_a(t_stack *stack_a, t_stack *stack_b);
 void	ft_push_all_to_b(t_stack *stack_a, t_stack *stack_b);
-
 int		ft_get_real_position(t_stack *stack_b, int curr);
 int		ft_stack_size(t_stack stack_a);
 int		ft_set_size(int size_of_stack);
-
-
-
-/* - - - - Function Prototypes - - - - - */
 
 #endif

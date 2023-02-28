@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_rotate_rr.c                              :+:      :+:    :+:   */
+/*   push_all_to_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 22:06:29 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/28 17:19:49 by ylabrahm         ###   ########.fr       */
+/*   Created: 2023/02/28 17:15:18 by ylabrahm          #+#    #+#             */
+/*   Updated: 2023/02/28 17:16:06 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_rotate_rr(t_stack *stack_a, t_stack *stack_b, char *message)
+void	ft_push_all_to_a(t_stack *stack_a, t_stack *stack_b)
 {
-	ft_rotate(stack_a, NULL);
-	ft_rotate(stack_b, NULL);
-	ft_printf("%s\n", message);
+	int	pos;
+	int	size_of_b;
+
+	size_of_b = ft_stack_size(*stack_b);
+	while (stack_b->top)
+	{
+		while (stack_b->top->position != (size_of_b - 1))
+		{
+			pos = ft_get_real_position(stack_b, (size_of_b - 1));
+			if (pos > (size_of_b / 2))
+				ft_rotate_rev(stack_b, "rrb");
+			else
+				ft_rotate(stack_b, "rb");
+		}
+		ft_push_a(stack_a, stack_b, "pa");
+		size_of_b--;
+	}
 }

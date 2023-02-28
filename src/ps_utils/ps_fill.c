@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 16:26:26 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/02/27 16:15:56 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	ft_bubble_sort(int *array, int tot)
 
 void	ft_push_node_to_stack(int number, t_stack *stack)
 {
-	t_node	*node;
-	int		i;
+	t_node		*node;
+	int			i;
 
 	node = (t_node *) malloc(sizeof(t_node));
 	node->content = number;
@@ -85,6 +85,26 @@ void	ft_fill_position(t_stack *stack, int *array, int tot)
 	}
 }
 
+void	ft_fill_rank(t_stack *stack, int tot)
+{
+	t_node	*node;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = tot - 1;
+
+	node = stack->top;
+	while (node)
+	{
+		node->up_rank = j;
+		node->dw_rank = i;
+		node = node->next;
+		i++;
+		j--;
+	}
+}
+
 void	ft_fill_stack(t_stack *stack, char **argv)
 {
 	int	*array;
@@ -97,4 +117,5 @@ void	ft_fill_stack(t_stack *stack, char **argv)
 		ft_push_node_to_stack(array[i--], stack);
 	ft_bubble_sort(array, tot);
 	ft_fill_position(stack, array, tot);
+	ft_fill_rank(stack, tot);
 }

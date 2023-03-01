@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/01 12:20:45 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:27:29 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,39 +60,81 @@ int	ft_set_size(int size_of_stack)
 	return (size_of_stack / d);
 }
 
+
+t_node	*get_last_node(t_stack *stack_a)
+{
+	t_node	*temp_node;
+
+	temp_node = stack_a->top;
+	while (temp_node->next)
+		temp_node = temp_node->next;
+	return (temp_node);
+}
+
+t_node	*get_large_node(t_stack *stack_a)
+{
+	t_node	*large_pos;
+	t_node	*temp_node;
+
+	large_pos = stack_a->top;
+	temp_node = stack_a->top;
+	while (temp_node)
+	{
+		if (temp_node->position > large_pos->position)
+			large_pos = temp_node;
+		temp_node = temp_node->next;
+	}
+	return (large_pos);
+}
+
+void	ft_sort_three(t_stack *stack_a, int a_size)
+{
+	t_node	*large_pos;
+	t_node	*last_node;
+
+	large_pos = get_large_node(stack_a);
+	last_node = get_last_node(stack_a);
+	if (a_size == 2)
+	{
+		ft_rotate(stack_a, "sa");
+		return ;
+	}
+	if (a_size == 3)
+	{
+		if (large_pos->position != last_node->position)
+		{
+			if (stack_a->top->position == large_pos->position)
+				ft_rotate(stack_a, "ra");
+			if (stack_a->top->next->position == large_pos->position)
+				ft_rotate_rev(stack_a, "rra");
+		}
+		if (stack_a->top->position > stack_a->top->next->position)
+			ft_rotate(stack_a, "sa");
+	}
+}
+
+void	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
+{
+	while (ft_stack_size(*stack_a) > 3)
+	{
+		if (stack_a->top->position > 1)
+			ft_rotate(stack_a, "ra");
+		else
+			ft_push_b(stack_a, stack_b, "pb");
+	}
+	ft_sort_three(stack_a, ft_stack_size(*stack_a));
+	while (stack_b->top)
+		ft_push_a(stack_a, stack_b, "pa");
+	if (stack_a->top->position != 0)
+		ft_swap(stack_a, "sa");
+}
+
 void	ft_sort_small(t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_stack_size(*stack_a) <= 3)
-	{
-		if (ft_stack_size(*stack_a) == 2)
-			ft_swap(stack_a, "sa");
-		else
-		{
-			if (stack_a->top->position == 0)
-			{
-				ft_push_b(stack_a, stack_b, "pb");
-				ft_rotate(stack_a, "ra");
-				ft_push_a(stack_a, stack_b, "pa");
-			}
-			else if (stack_a->top->position == 1)
-			{
-				if (stack_a->top->next->position == 2)
-					ft_rotate_rev(stack_a, "rra");
-				else
-					ft_swap(stack_a, "sa");
-			}
-			else if (stack_a->top->position == 2)
-			{
-				if (stack_a->top->next->position == 1)
-				{
-					ft_swap(stack_a, "sa");
-					ft_rotate_rev(stack_a, "rra");
-				}
-				else
-					ft_rotate(stack_a, "ra");
-			}
-		}
-	}
+		ft_sort_three(stack_a, ft_stack_size(*stack_a));
+	else
+		ft_sort_five(stack_a, stack_b);
 }
 
 int	main(int argc, char *argv[])

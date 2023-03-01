@@ -9,6 +9,7 @@
 		"get_next_line.h": "c",
 		"libft.h": "c",
 		"random": "c",
-		"chrono": "c"
+		"chrono": "c",
+		"__node_handle": "c"
 	}
 }

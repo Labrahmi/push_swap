@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:40:59 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/25 22:24:39 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:36:54 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ void	ft_rotate(t_stack *stack, char *message)
 		temp->next = old_top;
 		old_top->next = NULL;
 		if (message)
-			ft_printf("%s\n", message);
+		{
+			ft_putstr_fd(message, 1);
+			ft_putstr_fd("\n", 1);
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/28 17:40:35 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:25:25 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,26 @@ void	ft_fill_rank(t_stack *stack, int tot)
 	}
 }
 
+void	ft_check_sort(t_stack *stack)
+{
+	t_node	*node;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	node = stack->top;
+	while (node->next)
+	{
+		if (node->position < node->next->position)
+			j++;
+		node = node->next;
+		i++;
+	}
+	if (i == j)
+		exit(0);
+}
+
 void	ft_fill_stack(t_stack *stack, char **argv)
 {
 	int	*array;
@@ -102,4 +122,5 @@ void	ft_fill_stack(t_stack *stack, char **argv)
 	ft_bubble_sort(array, tot);
 	ft_fill_position(stack, array, tot);
 	ft_fill_rank(stack, tot);
+	ft_check_sort(stack);
 }

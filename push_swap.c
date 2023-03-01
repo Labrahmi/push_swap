@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/01 11:32:36 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:20:45 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,41 @@ int	ft_set_size(int size_of_stack)
 	return (size_of_stack / d);
 }
 
+void	ft_sort_small(t_stack *stack_a, t_stack *stack_b)
+{
+	if (ft_stack_size(*stack_a) <= 3)
+	{
+		if (ft_stack_size(*stack_a) == 2)
+			ft_swap(stack_a, "sa");
+		else
+		{
+			if (stack_a->top->position == 0)
+			{
+				ft_push_b(stack_a, stack_b, "pb");
+				ft_rotate(stack_a, "ra");
+				ft_push_a(stack_a, stack_b, "pa");
+			}
+			else if (stack_a->top->position == 1)
+			{
+				if (stack_a->top->next->position == 2)
+					ft_rotate_rev(stack_a, "rra");
+				else
+					ft_swap(stack_a, "sa");
+			}
+			else if (stack_a->top->position == 2)
+			{
+				if (stack_a->top->next->position == 1)
+				{
+					ft_swap(stack_a, "sa");
+					ft_rotate_rev(stack_a, "rra");
+				}
+				else
+					ft_rotate(stack_a, "ra");
+			}
+		}
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
@@ -72,6 +107,8 @@ int	main(int argc, char *argv[])
 		ft_init_stack(stack_a);
 		ft_init_stack(stack_b);
 		ft_fill_stack(stack_a, argv);
+		if (ft_stack_size(*stack_a) == 1)
+			return (0);
 		if (ft_stack_size(*stack_a) <= 5)
 			ft_sort_small(stack_a, stack_b);
 		else

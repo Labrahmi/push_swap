@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/28 17:27:41 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:17:55 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ typedef struct s_node
 {
 	int				content;
 	long int		position;
-	long int		up_rank;
-	long int		dw_rank;
 	struct s_node	*next;
 }	t_node;
 
@@ -57,5 +55,11 @@ void	ft_push_all_to_b(t_stack *stack_a, t_stack *stack_b);
 int		ft_get_real_position(t_stack *stack_b, int curr);
 int		ft_stack_size(t_stack stack_a);
 int		ft_set_size(int size_of_stack);
+t_node	*get_last_node(t_stack *stack_a);
+t_node	*get_large_node(t_stack *stack_a);
+int		ft_set_size(int size_of_stack);
+void	ft_sort_small(t_stack *stack_a, t_stack *stack_b);
+void	ft_sort_five(t_stack *stack_a, t_stack *stack_b);
+void	ft_sort_three(t_stack *stack_a, int a_size);
 
 #endif

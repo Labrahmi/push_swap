@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/02 15:39:04 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:18:20 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,49 +42,6 @@ int	ft_get_real_position(t_stack *stack_b, int curr)
 		i++;
 	}
 	return (0);
-}
-
-int	ft_set_size(int size_of_stack)
-{
-	int	d;
-
-	d = 1;
-	if (size_of_stack >= 10)
-		d = 2;
-	if (size_of_stack >= 60)
-		d = 3;
-	if (size_of_stack >= 100)
-		d = 5;
-	if (size_of_stack >= 500)
-		d = 10;
-	return (size_of_stack / d);
-}
-
-
-t_node	*get_last_node(t_stack *stack_a)
-{
-	t_node	*temp_node;
-
-	temp_node = stack_a->top;
-	while (temp_node->next)
-		temp_node = temp_node->next;
-	return (temp_node);
-}
-
-t_node	*get_large_node(t_stack *stack_a)
-{
-	t_node	*large_pos;
-	t_node	*temp_node;
-
-	large_pos = stack_a->top;
-	temp_node = stack_a->top;
-	while (temp_node)
-	{
-		if (temp_node->position > large_pos->position)
-			large_pos = temp_node;
-		temp_node = temp_node->next;
-	}
-	return (large_pos);
 }
 
 void	ft_sort_three(t_stack *stack_a, int a_size)
@@ -129,23 +86,15 @@ void	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 		ft_swap(stack_a, "sa");
 }
 
-void	ft_sort_small(t_stack *stack_a, t_stack *stack_b)
-{
-	if (ft_stack_size(*stack_a) <= 3)
-		ft_sort_three(stack_a, ft_stack_size(*stack_a));
-	else
-		ft_sort_five(stack_a, stack_b);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	stack_a = (t_stack *)malloc(sizeof(t_stack));
-	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (argc > 1)
 	{
+		stack_a = (t_stack *)malloc(sizeof(t_stack));
+		stack_b = (t_stack *)malloc(sizeof(t_stack));
 		ft_init_stack(stack_a);
 		ft_init_stack(stack_b);
 		ft_fill_stack(stack_a, argv);

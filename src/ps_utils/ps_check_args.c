@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:14:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/01 20:41:47 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:11:02 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ int	ft_check_int(char **argv)
 		while (t.s[++(t.j)])
 		{
 			t.x = 0;
-			while (t.s[t.j][t.x])
+			while (t.s[t.j][t.x] == '0' ||
+				t.s[t.j][t.x] == '+' || t.s[t.j][t.x] == '-')
 				(t.x)++;
 			if (ft_strlen(&t.s[t.j][t.x]) > 11)
 				ft_exit("Error\n", 1, NULL, t.s);

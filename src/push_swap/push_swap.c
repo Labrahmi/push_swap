@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/02 16:18:20 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:00:09 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ int	main(int argc, char *argv[])
 
 	if (argc > 1)
 	{
+		if (!(argv[1][0]))
+			exit(0);
 		stack_a = (t_stack *)malloc(sizeof(t_stack));
 		stack_b = (t_stack *)malloc(sizeof(t_stack));
 		ft_init_stack(stack_a);

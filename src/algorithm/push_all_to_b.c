@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:15:55 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/28 22:25:26 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/04 20:38:10 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	ft_help_pb(t_stack *stack_a, t_stack *stack_b, int c, int ck)
 	if (stack_a->top)
 	{
 		t_b_pos = stack_b->top->position;
-		if ((t_b_pos <= c - (ck / 2)) && (stack_a->top->position >= c))
+		if ((stack_b->top->position < (c - ck)) && (stack_a->top->position > c))
 			ft_rotate_rr(stack_a, stack_b, "rr");
-		else if (stack_b->top->position <= c - (ck / 2))
+		else if (stack_b->top->position < (c - ck))
 			ft_rotate(stack_b, "rb");
 	}
 }
@@ -55,16 +55,12 @@ void	ft_push_all_to_b(t_stack *stack_a, t_stack *stack_b)
 	i = 0;
 	while (stack_a->top)
 	{
-		if (stack_a->top->position >= c)
-		{
+		if (stack_a->top->position > c)
 			ft_rotate(stack_a, "ra");
-			if (i == c)
-				c += ck;
-		}
 		else
 		{
 			ft_help_pb(stack_a, stack_b, c, ck);
-			i++;
+			c++;
 		}
 	}
 }

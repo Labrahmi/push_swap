@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:13:43 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/02 16:15:53 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:16:17 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ int	ft_set_size(int size_of_stack)
 
 	d = 1;
 	if (size_of_stack >= 10)
-		d = 2;
+		d = 4;
 	if (size_of_stack >= 60)
-		d = 3;
+		d = 6;
 	if (size_of_stack >= 100)
-		d = 5;
-	if (size_of_stack >= 500)
 		d = 10;
+	if (size_of_stack >= 500)
+		d = 20;
 	return (size_of_stack / d);
 }
 

@@ -3,14 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+         #
+#    By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/03/02 16:16:29 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/03/05 19:56:39 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
+NAME_BONUS = checker_push
 
 SRCS = 	./src/push_swap/push_swap.c \
 		./src/push_swap/push_swap_utils.c \
@@ -30,7 +32,11 @@ SRCS = 	./src/push_swap/push_swap.c \
 		./src/operations/operation_rotate_rev.c \
 		./src/operations/operation_rotate_rev_rrr.c \
 
+SRCS_BONUS = ./bonus/main.c
+
 OBJS = $(SRCS:.c=.o)
+
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 CC = cc
 
@@ -54,5 +60,8 @@ fclean:	clean
 	@make fclean -C includes/libft/
 	clear
 	$(RM) $(NAME)
+
+bonus: all $(OBJS_BONUS)
+	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS_BONUS) -o $(NAME_BONUS)
 
 re:	fclean all

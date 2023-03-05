@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:25:07 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/02/10 21:46:26 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:52:05 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdarg.h>
+# include "get_next_line/get_next_line.h"
 
 # ifndef SIZE_MAX
 #  define SIZE_MAX (18446744073709551615UL)

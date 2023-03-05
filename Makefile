@@ -6,7 +6,7 @@
 #    By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/03/05 20:03:43 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/03/05 20:19:12 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,22 +48,20 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@make -C includes/libft/
-	clear
 	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS) -o $(NAME)
 
 clean:
 	@make clean -C includes/libft/
-	clear
 	$(RM) $(OBJS)
 	$(RM) $(OBJS_BONUS)
 
 fclean:	clean
 	@make fclean -C includes/libft/
-	clear
 	$(RM) $(NAME)
 	$(RM) $(NAME_BONUS)
 
-bonus: all $(OBJS_BONUS)
-	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS_BONUS) -o $(NAME_BONUS)
+bonus: $(OBJS_BONUS) $(OBJS)
+	@make -C includes/libft/
+	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS_BONUS) $(OBJS) -o $(NAME_BONUS)
 
 re:	fclean all

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/02 16:17:55 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/05 20:15:09 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "libft/get_next_line/get_next_line.h"
 
 # ifndef MAX_STACK
 #  define MAX_STACK 10240
@@ -61,5 +60,9 @@ int		ft_set_size(int size_of_stack);
 void	ft_sort_small(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort_five(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort_three(t_stack *stack_a, int a_size);
+
+/* - - - */
+void	ft_check_rules(char *s);
+/* - - - */
 
 #endif

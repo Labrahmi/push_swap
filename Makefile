@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+         #
+#    By: macbook <macbook@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/03/05 20:19:12 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/03/08 22:53:44 by macbook          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-NAME_BONUS = checker_push
+NAME_BONUS = checker
 
-SRCS = 	./src/push_swap/push_swap.c \
-		./src/push_swap/push_swap_utils.c \
+SRCS = 	./src/push_swap/push_swap_utils.c \
+		./src/push_swap/push_swap_utils_2.c \
 		./src/ps_utils/ps_check_args_utils.c \
 		./src/ps_utils/ps_check_args.c \
 		./src/ps_utils/ps_exit.c \
@@ -32,11 +32,15 @@ SRCS = 	./src/push_swap/push_swap.c \
 		./src/operations/operation_rotate_rev.c \
 		./src/operations/operation_rotate_rev_rrr.c \
 
-SRCS_BONUS = ./bonus/main.c
+SRCS_MANDT = ./src/push_swap/push_swap.c 
+
+SRCS_BONUS = ./bonus/checker.c
 
 OBJS = $(SRCS:.c=.o)
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+
+OBJS_MANDT = $(SRCS_MANDT:.c=.o)
 
 CC = cc
 
@@ -46,22 +50,20 @@ CFLAGS = -Wall -Wextra -Werror
 
 all:	$(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) $(OBJS_MANDT)
 	@make -C includes/libft/
-	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS) $(OBJS_MANDT) -o $(NAME)
 
 clean:
 	@make clean -C includes/libft/
-	$(RM) $(OBJS)
-	$(RM) $(OBJS_BONUS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean:	clean
 	@make fclean -C includes/libft/
-	$(RM) $(NAME)
-	$(RM) $(NAME_BONUS)
+	$(RM) $(NAME) $(NAME_BONUS)
 
 bonus: $(OBJS_BONUS) $(OBJS)
 	@make -C includes/libft/
-	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS_BONUS) $(OBJS) -o $(NAME_BONUS)
+	$(CC) $(CFLAGS) includes/libft/libft.a $(OBJS) $(OBJS_BONUS) -o $(NAME_BONUS)
 
 re:	fclean all

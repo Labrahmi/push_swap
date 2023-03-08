@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: macbook <macbook@student.42.fr>            +#+  +:+       +#+         #
+#    By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/03/08 22:53:44 by macbook          ###   ########.fr        #
+#    Updated: 2023/03/09 00:20:32 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS = 	./src/push_swap/push_swap_utils.c \
 		./src/operations/operation_rotate_rr.c \
 		./src/operations/operation_rotate_rev.c \
 		./src/operations/operation_rotate_rev_rrr.c \
+		./bonus/utils/ft_util_1.c
 
 SRCS_MANDT = ./src/push_swap/push_swap.c 
 
@@ -46,7 +47,7 @@ CC = cc
 
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 all:	$(NAME)
 
@@ -56,11 +57,11 @@ $(NAME):	$(OBJS) $(OBJS_MANDT)
 
 clean:
 	@make clean -C includes/libft/
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS) $(OBJS_BONUS) $(OBJS_MANDT)
 
 fclean:	clean
 	@make fclean -C includes/libft/
-	$(RM) $(NAME) $(NAME_BONUS)
+	$(RM) $(NAME) $(NAME_BONUS) $(OBJS_MANDT)
 
 bonus: $(OBJS_BONUS) $(OBJS)
 	@make -C includes/libft/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/08 22:30:40 by macbook          ###   ########.fr       */
+/*   Updated: 2023/03/09 00:00:47 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,13 @@ void	ft_sort_three(t_stack *stack_a, int a_size);
 /* - - - */
 void	ft_check_rules(char *s);
 /* - - - */
+
+/* - - BONUS - - */
+
+void	ft_check_rules(char *s);
+void    ft_check_exist(char *s);
+
+/* - - BONUS - - */
+
 
 #endif

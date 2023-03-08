@@ -3,31 +3,86 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:45:27 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/08 22:51:03 by macbook          ###   ########.fr       */
+/*   Updated: 2023/03/09 00:40:06 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_check_rules(char *s)
+void	ft_send_rule(char *s, t_stack *stack_a, t_stack *stack_b)
 {
-	if ((ft_strlen(s) > 3) || (ft_strlen(s) < 2))
-		ft_exit("Error\n", 1, 0, 0);
+	int	len;
+
+	len = ft_strlen(s) - 1;
+	if (ft_strncmp(s, "sa", len) == 0)
+		ft_swap(stack_a, 0);
+	if (ft_strncmp(s, "sb", len) == 0)
+		ft_swap(stack_b, 0);
+	if (ft_strncmp(s, "ss", len) == 0)
+		ft_swap_ss(stack_a, stack_b, 0);
+	if (ft_strncmp(s, "pa", len) == 0)
+		ft_push_a(stack_a, stack_b, 0);
+	if (ft_strncmp(s, "pb", len) == 0)
+		ft_push_b(stack_a, stack_b, 0);
+	if (ft_strncmp(s, "ra", len) == 0)
+		ft_rotate(stack_a, 0);
+	if (ft_strncmp(s, "rb", len) == 0)
+		ft_rotate(stack_b, 0);
+	if (ft_strncmp(s, "rr", len) == 0)
+		ft_rotate_rr(stack_a, stack_b, 0);
+	if (ft_strncmp(s, "rra", len) == 0)
+		ft_rotate_rev(stack_a, 0);
+	if (ft_strncmp(s, "rra", len) == 0)
+		ft_rotate_rev(stack_a, 0);
+	if (ft_strncmp(s, "rrr", len) == 0)
+		ft_rotate_rev_rrr(stack_a, stack_b, 0);
 }
 
-int main(void)
+void	ft_check_sort_bonus(t_stack *stack)
+{
+	t_node	*node;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	node = stack->top;
+	while (node->next)
+	{
+		if (node->position < node->next->position)
+			j++;
+		node = node->next;
+		i++;
+	}
+	if (i == j)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+}
+
+int main(int ac, char *av[])
 {
 	char	*s;
+	int		tot;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = (t_stack *)malloc(sizeof(t_stack));
+	stack_b = (t_stack *)malloc(sizeof(t_stack));
+	tot = 0;
+	ft_check_args(av, &tot);
+	ft_fill_stack(stack_a, av);
 	while (1)
 	{
 		s = get_next_line(0);
 		if (!(s))
 			break;
 		ft_check_rules(s);
-		ft_printf("%s", s);
+		ft_send_rule(s, stack_a, stack_b);
 	}
+	ft_check_sort_bonus(stack_a);
 	return 0;
 }

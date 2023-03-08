@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:25:07 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/05 19:52:05 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/08 23:59:36 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 void		ft_lstadd_front(t_list **lst, t_list *new);
+
+
 
 #endif

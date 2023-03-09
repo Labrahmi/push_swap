@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_util_1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:58:42 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/09 00:39:03 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/10 00:27:38 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void    ft_check_exist(char *s)
+void	ft_check_exist(char *s)
 {
-	int i;
+	int	i;
 	int	len;
 
 	len = ft_strlen(s);
@@ -43,4 +43,3 @@ void	ft_check_rules(char *s)
 		ft_check_exist(s);
 	}
 }
-

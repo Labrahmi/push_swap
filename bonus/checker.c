@@ -6,7 +6,7 @@
 /*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:45:27 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/09 17:25:33 by macbook          ###   ########.fr       */
+/*   Updated: 2023/03/10 00:25:58 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_check_sort_bonus(t_stack *stack)
 		ft_printf("KO\n");
 }
 
-int main(int ac, char *av[])
+int	main(int ac, char *av[])
 {
 	char	*s;
 	int		tot;
@@ -76,10 +76,10 @@ int main(int ac, char *av[])
 	{
 		s = get_next_line(0);
 		if (!(s))
-			break;
+			break ;
 		ft_check_rules(s);
 		ft_send_rule(s, stack_a, stack_b);
 	}
 	ft_check_sort_bonus(stack_a);
-	return 0;
+	return (0);
 }

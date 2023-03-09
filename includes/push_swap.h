@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/09 17:06:49 by macbook          ###   ########.fr       */
+/*   Updated: 2023/03/09 22:42:32 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_check_strange(char splited_char);
 void	ft_check_rep_util(int tot, int *array);
 int		*ft_check_args(char **argv, int *main_tot);
 void	ft_free(void *array, char **d_array);
+void	ft_free_stack(t_stack *stack);
 void	ft_exit(char *message, int stauts, void *array, char **d_array);
 void	ft_fill_stack(t_stack *stack, char **argv);
 void	ft_init_stack(t_stack *stack);

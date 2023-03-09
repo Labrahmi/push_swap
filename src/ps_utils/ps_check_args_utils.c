@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:18:10 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/05 18:29:10 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:42:20 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,17 @@ void	ft_check_rep_util(int tot, int *array)
 		}
 		i++;
 	}
+}
+
+void	ft_free_stack(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;
+	while (node)
+	{
+		free(node);
+		node = node->next;
+	}
+	free(stack);
 }

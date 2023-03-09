@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/05 18:29:18 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:32:10 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,5 @@ void	ft_fill_stack(t_stack *stack, char **argv)
 	ft_bubble_sort(array, tot);
 	ft_fill_position(stack, array, tot);
 	ft_check_sort(stack);
+	free(array);
 }

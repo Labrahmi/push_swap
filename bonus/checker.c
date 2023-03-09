@@ -6,7 +6,7 @@
 /*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:45:27 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/09 01:23:02 by macbook          ###   ########.fr       */
+/*   Updated: 2023/03/09 17:25:33 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,27 @@
 
 void	ft_send_rule(char *s, t_stack *stack_a, t_stack *stack_b)
 {
-	int	len;
-
-	len = ft_strlen(s) - 1;
-	if (ft_strncmp(s, "sa", len) == 0)
+	if (ft_strncmp(s, "sa\n", 4) == 0)
 		ft_swap(stack_a, 0);
-	if (ft_strncmp(s, "sb", len) == 0)
+	if (ft_strncmp(s, "sb\n", 4) == 0)
 		ft_swap(stack_b, 0);
-	if (ft_strncmp(s, "ss", len) == 0)
+	if (ft_strncmp(s, "ss\n", 4) == 0)
 		ft_swap_ss(stack_a, stack_b, 0);
-	if (ft_strncmp(s, "pa", len) == 0)
+	if (ft_strncmp(s, "pa\n", 4) == 0)
 		ft_push_a(stack_a, stack_b, 0);
-	if (ft_strncmp(s, "pb", len) == 0)
+	if (ft_strncmp(s, "pb\n", 4) == 0)
 		ft_push_b(stack_a, stack_b, 0);
-	if (ft_strncmp(s, "ra", len) == 0)
+	if (ft_strncmp(s, "ra\n", 4) == 0)
 		ft_rotate(stack_a, 0);
-	if (ft_strncmp(s, "rb", len) == 0)
+	if (ft_strncmp(s, "rb\n", 4) == 0)
 		ft_rotate(stack_b, 0);
-	if (ft_strncmp(s, "rr", len) == 0)
+	if (ft_strncmp(s, "rr\n", 4) == 0)
 		ft_rotate_rr(stack_a, stack_b, 0);
-	if (ft_strncmp(s, "rra", len) == 0)
+	if (ft_strncmp(s, "rra\n", 5) == 0)
 		ft_rotate_rev(stack_a, 0);
-	if (ft_strncmp(s, "rra", len) == 0)
-		ft_rotate_rev(stack_a, 0);
-	if (ft_strncmp(s, "rrr", len) == 0)
+	if (ft_strncmp(s, "rrb\n", 5) == 0)
+		ft_rotate_rev(stack_b, 0);
+	if (ft_strncmp(s, "rrr\n", 5) == 0)
 		ft_rotate_rev_rrr(stack_a, stack_b, 0);
 }
 

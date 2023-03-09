@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:17:13 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/09 00:00:47 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:06:49 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,10 @@ int		ft_set_size(int size_of_stack);
 void	ft_sort_small(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort_five(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort_three(t_stack *stack_a, int a_size);
+
+// .
+void    ft_vis_stack(char *name, t_stack *stack);
+// .
 
 /* - - - */
 void	ft_check_rules(char *s);

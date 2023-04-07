@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_fill.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/09 22:32:10 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/04/07 12:54:32 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ft_check_sort(t_stack *stack)
 		exit(0);
 }
 
-void	ft_fill_stack(t_stack *stack, char **argv)
+void	ft_fill_stack(t_stack *stack, char **argv, int state)
 {
 	int	*array;
 	int	tot;
@@ -102,6 +102,7 @@ void	ft_fill_stack(t_stack *stack, char **argv)
 		ft_push_node_to_stack(array[i--], stack);
 	ft_bubble_sort(array, tot);
 	ft_fill_position(stack, array, tot);
-	ft_check_sort(stack);
+	if (state == 0)
+		ft_check_sort(stack);
 	free(array);
 }

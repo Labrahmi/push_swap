@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:45:27 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/10 00:25:58 by macbook          ###   ########.fr       */
+/*   Updated: 2023/04/07 12:53:42 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_send_rule(char *s, t_stack *stack_a, t_stack *stack_b)
 		ft_rotate_rev_rrr(stack_a, stack_b, 0);
 }
 
-void	ft_check_sort_bonus(t_stack *stack)
+void	ft_check_sort_bonus(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*node;
 	int		i;
@@ -46,7 +46,7 @@ void	ft_check_sort_bonus(t_stack *stack)
 
 	i = 0;
 	j = 0;
-	node = stack->top;
+	node = stack_a->top;
 	while (node->next)
 	{
 		if (node->position < node->next->position)
@@ -54,7 +54,7 @@ void	ft_check_sort_bonus(t_stack *stack)
 		node = node->next;
 		i++;
 	}
-	if (i == j)
+	if (i == j && !(stack_b->top))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
@@ -67,11 +67,13 @@ int	main(int ac, char *av[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	if (ac < 2)
+		return (0);
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	tot = 0;
 	ft_check_args(av, &tot);
-	ft_fill_stack(stack_a, av);
+	ft_fill_stack(stack_a, av, 1);
 	while (1)
 	{
 		s = get_next_line(0);
@@ -80,6 +82,6 @@ int	main(int ac, char *av[])
 		ft_check_rules(s);
 		ft_send_rule(s, stack_a, stack_b);
 	}
-	ft_check_sort_bonus(stack_a);
+	ft_check_sort_bonus(stack_a, stack_b);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylabrahm <ylabrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:16:09 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/09 22:42:16 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/04/07 12:55:06 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char *argv[])
 		stack_b = (t_stack *)malloc(sizeof(t_stack));
 		ft_init_stack(stack_a);
 		ft_init_stack(stack_b);
-		ft_fill_stack(stack_a, argv);
+		ft_fill_stack(stack_a, argv, 0);
 		if (ft_stack_size(*stack_a) == 1)
 			return (0);
 		if (ft_stack_size(*stack_a) <= 5)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_check_args_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:18:10 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/03/10 00:31:05 by macbook          ###   ########.fr       */
+/*   Updated: 2023/04/08 21:52:21 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,14 @@ void	ft_check_rep_util(int tot, int *array)
 void	ft_free_stack(t_stack *stack)
 {
 	t_node	*node;
+	t_node	*next;
 
 	node = stack->top;
 	while (node)
 	{
+		next = node->next;
 		free(node);
-		node = node->next;
+		node = next;
 	}
 	free(stack);
 }

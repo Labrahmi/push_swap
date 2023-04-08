@@ -6,7 +6,7 @@
 #    By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 15:23:13 by ylabrahm          #+#    #+#              #
-#    Updated: 2023/04/07 12:43:29 by ylabrahm         ###   ########.fr        #
+#    Updated: 2023/04/08 21:08:21 by ylabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,7 @@ SRCS = 	./src/push_swap/push_swap_utils.c \
 		./src/operations/operation_rotate_rr.c \
 		./src/operations/operation_rotate_rev.c \
 		./src/operations/operation_rotate_rev_rrr.c \
-		./bonus/utils/ft_util_1.c \
-		./visualisation/ft_vis_stack.c
+		./bonus/utils/ft_util_1.c 
 
 SRCS_MANDT = ./src/push_swap/push_swap.c 
 
@@ -48,7 +47,7 @@ CC = cc
 
 RM = rm -f
 
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 all:	$(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:45:27 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/04/07 12:53:42 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/04/08 21:55:34 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int	main(int ac, char *av[])
 		return (0);
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
+	ft_init_stack(stack_a);
+	ft_init_stack(stack_b);
 	tot = 0;
 	ft_check_args(av, &tot);
 	ft_fill_stack(stack_a, av, 1);

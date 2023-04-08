@@ -6,7 +6,7 @@
 /*   By: ylabrahm <ylabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:17:06 by ylabrahm          #+#    #+#             */
-/*   Updated: 2023/04/07 12:54:32 by ylabrahm         ###   ########.fr       */
+/*   Updated: 2023/04/08 21:31:03 by ylabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_push_node_to_stack(int number, t_stack *stack)
 void	ft_fill_position(t_stack *stack, int *array, int tot)
 {
 	t_node	*node;
-	int		i;
+	long	i;
 
 	node = stack->top;
 	while (node)
